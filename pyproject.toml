@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hyperunlock-8g3"
+version = "1.0.0"
+description = "Universal Bootloader Unlock & Bypass Suite for Xiaomi Snapdragon 8 Gen 3 (SM8650) HyperOS devices."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "GPL-3.0-or-later" }
+authors = [
+    { name = "HyperUnlock Contributors" }
+]
+keywords = ["xiaomi", "hyperos", "bootloader", "unlock", "fastboot", "sm8650", "snapdragon"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: System :: Hardware",
+    "Topic :: Utilities"
+]
+dependencies = [
+    "requests>=2.31.0",
+    "cryptography>=42.0.0",
+    "urllib3>=2.0.0",
+    "rich>=13.7.0",
+    "migate>=1.1.11"
+]
+
+[project.scripts]
+hyperunlock = "main:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["hyperunlock*"]
